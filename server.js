@@ -10,11 +10,11 @@ const app = express();
 // Enable CORS
 app.use(cors());
 
-// Parse JSON bodiesx
+// Parse JSON bodies
 app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
-const IP = '34.116.190.157';
+const IP = '0.0.0.0'; // Listen on all available network interfaces
 
 const authRoutes = require("./routers/authRoutes.js");
 const itemsRoutes = require("./routers/itemsRoutes.js");
@@ -26,4 +26,5 @@ app.use(itemsRoutes);
 app.use(userRoutes);
 app.use(imageRoutes);
 
+// Start the server
 app.listen(PORT, IP, () => console.log(`Server running on ${IP}:${PORT}`));
