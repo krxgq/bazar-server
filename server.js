@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
-const IP = '34.116.155.145 ';
+const IP = '34.116.190.157';
 
 const authRoutes = require("./routers/authRoutes.js");
 const itemsRoutes = require("./routers/itemsRoutes.js");
