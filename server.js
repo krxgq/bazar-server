@@ -14,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
+const IP = '34.116.155.145 ';
 
 const authRoutes = require("./routers/authRoutes.js");
 const itemsRoutes = require("./routers/itemsRoutes.js");
@@ -25,4 +26,4 @@ app.use(itemsRoutes);
 app.use(userRoutes);
 app.use(imageRoutes);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, IP, () => console.log(`Server running on ${IP}:${PORT}`));
