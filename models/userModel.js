@@ -62,10 +62,18 @@ async function getAllFavorites(userID) {
     return [];
   }
 }
+async function updateUser(id, ...profileData) {
+  const conn = await mysql.createConnection(config);
+  const [rows] = await conn.execute(
+    `UPDATE users SET ? WHERE id = ?`,
+    [profileData, id]
+  );
+}
 
 module.exports = {
   findByUsername,
   addFav,
   removeFav,
   getAllFavorites,
+  updateUser,
 };

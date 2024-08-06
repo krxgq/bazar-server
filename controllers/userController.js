@@ -77,10 +77,25 @@ const getAllFavorites = async (req, res) => {
     res.status(500).json({ error: "Failed to get favorites" });
   }
 };
+const updateProfile = async (req, res) => {
+  try {
+    const { id, ...profileData } = req.body;
+    console.log("Profile Data:", profileData);
+    // Assuming you're using a function to update the user data in your database
+    await userModel.updateUser(id, profileData);
+    
+    res.status(200).json({ message: "Profile updated successfully!" });
+  } catch (err) {
+    console.error("Error updating profile:", err);
+    res.status(500).json({ error: "Failed to update profile." });
+  }
+};
+
 module.exports = {
   getCurrentUser,
   getProfilePicture,
   addFav,
   removeFav,
   getAllFavorites,
+  updateProfile,
 };

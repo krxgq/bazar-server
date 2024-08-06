@@ -1,1 +1,2 @@
-configs/google-cloud-key.json
+configs\google-cloud-key.json
+configs\.env

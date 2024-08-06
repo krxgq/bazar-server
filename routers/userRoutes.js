@@ -4,6 +4,7 @@ const userController = require("../controllers/userController");
 
 router.post("/api/getCurrentUser", userController.getCurrentUser);
 router.get("/api/getPfp/:imageName", userController.getProfilePicture);
+router.post("/api/updateProfile", userController.updateProfile);
 router.post("/api/addFav", userController.addFav);
 router.post("/api/removeFav", userController.removeFav);
 router.post("/api/getAllFavorites", userController.getAllFavorites);
